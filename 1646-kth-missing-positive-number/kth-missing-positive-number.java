@@ -12,6 +12,7 @@ class Solution {
                 lo = mid + 1;
             }
         }
-        return lo + k;
+        // return lo + k;
+        return hi + 1 +k;
     }
 }
