@@ -4,7 +4,7 @@ class Solution {
 
         int n = arr.length;
 
-        // Step 1: Transpose
+        // Transpose
         for (int i = 1; i < n; i++) {
             for (int j = 0; j < i; j++) {
 
