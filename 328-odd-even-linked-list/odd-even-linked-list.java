@@ -16,29 +16,20 @@ class Solution {
         ListNode oddDummy = new ListNode(-1);
         ListNode evenDummy = new ListNode(-1);
 
-        ListNode oddTail = oddDummy;
-        ListNode evenTail = evenDummy;
+        ListNode t1 = oddDummy;
+        ListNode t2 = evenDummy;
 
         ListNode curr = head;
-        int pos = 1;
-
-        while(curr != null) {
-
-            if(pos % 2 == 1) {
-                oddTail.next = curr;
-                oddTail = curr;
-            } else {
-                evenTail.next = curr;
-                evenTail = curr;
-            }
-
+        while(curr != null){
+            t1.next = curr;
             curr = curr.next;
-            pos++;
+            t1 = t1.next;
+
+            t2.next = curr;
+            if(curr != null) curr = curr.next;
+            t2 = t2.next;
         }
-
-        oddTail.next = evenDummy.next;
-        evenTail.next = null;
-
+        t1.next = evenDummy.next;
         return oddDummy.next;
     }
 }
