@@ -21,10 +21,11 @@ class Solution {
 }
     public void view(TreeNode root, int level,List<Integer> ans){
         if(root==null) return;
-        if(level>= ans.size()) ans.add(root.val);
-        else ans.set(level,root.val);
-        view(root.left,level+1,ans);
+        if(level== ans.size()) ans.add(root.val);
+        // else ans.set(level,root.val);
+      
         view(root.right, level+1, ans);
+          view(root.left,level+1,ans);
 
     }
 }
