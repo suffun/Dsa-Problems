@@ -11,7 +11,6 @@ class Solution {
                 char top = st.peek();
                 if(sameStyle(top,ch)) st.pop();
                 else return false;
-
             }
         }
         return (st.size() == 0);
