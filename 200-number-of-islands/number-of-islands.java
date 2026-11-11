@@ -32,37 +32,25 @@ class Solution {
             int col = front.col;
 
             //top
-            if(row >0 ){
-                 if(vis[row-1][col] == false && grid[row-1][col] =='1'){
+            if(row >0 && vis[row-1][col] == false && grid[row-1][col] =='1'){
                 q.add(new Pair(row-1,col));
                 vis[row-1][col] = true;
             }
-            }
-           
             // bottom
-            if(  row+1 <m ){
-                if(vis[row+1][col] == false && grid[row+1][col] =='1'){
+            if(row+1 <m && vis[row+1][col] == false && grid[row+1][col] =='1'){
                 q.add(new Pair(row+1,col));
                 vis[row+1][col] = true;
             }
-            }
-            
             // left
-            if(col > 0){
-                if( vis[row][col-1] == false && grid[row][col-1] =='1'){
+            if(col > 0 && vis[row][col-1] == false && grid[row][col-1] =='1'){
                 q.add(new Pair(row,col-1));
                 vis[row][col-1] = true;
             }
-            }
-            
              // right
-             if(col+1 < n ){
-                if(vis[row][col+1] == false && grid[row][col+1] =='1'){
+            if(col+1 < n && vis[row][col+1] == false && grid[row][col+1] =='1'){
                 q.add(new Pair(row,col+1));
                 vis[row][col+1] = true;
             }
-             }
-            
         }
     }
 }
